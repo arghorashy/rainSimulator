@@ -6,21 +6,17 @@ use Tk;
 use PDL::NiceSlice;
 
 
+my $size = 500;
 
 our $speed = 1;
-our $grid = new rainGrid(100,1.5);
+our $grid = new rainGrid(int($size/8), 1.5);
 $grid->init;
-
-
-
-
-
 
 our $MW = MainWindow->new(-title => 'RainSim');
 $MW->geometry("+500+500");
 
 our $RC = $MW->Canvas(      -width      => 800,
-                            -height     => 800,
+                            -height     => $size,
                             -background => 'white',
                             -borderwidth  => '3',
                             -relief       => 'sunken',
@@ -82,8 +78,6 @@ sub startSimBatch
 {
     my ($grid, $RC, $speed) = @_;
     
-    
-
     my @speeds = (1,2,4,8,16,32);
     for $speed (@speeds)
     {
@@ -98,7 +92,6 @@ sub startSimBatch
             
             $grid->init;
 
-            
             my ($hRain, $vRain, $tRain) = startSim($grid, $RC, $speed, 0);
             
             print $OUT "$hRain, $vRain, $tRain\n"; 
