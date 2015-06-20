@@ -1,0 +1,6 @@
+
+This script was written back in 2012 when a widespread debate started in the office: do you stay dryer walking a fixed distance in the rain if you run or if you walk?
+
+For days, common sense, equations and arguments of all sorts were exchanged and I finally decided to write a program to demonstrate my logic.
+
+The enclosed code models a person walking in the rain and allows the user to change the speed of the rain and the person.  The program counts the number of droplets hitting the person in every scenario so that the user can decide for himself whether he should walk or run the next time in rains.
